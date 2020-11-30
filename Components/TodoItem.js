@@ -1,13 +1,16 @@
 import React from 'react';
 import { StyleSheet,Text, View,TouchableOpacity } from 'react-native';
+import MaterialIcons from 'react-native-vector-icons';
 
-export default function Todoitem({item,pressHandler}){
+export default function TodoItem({item,pressHandler}){
+    
     return(
         <TouchableOpacity onPress={()=>pressHandler(item.id)}>
            <View style={styles.item}>
+               <MaterialIcons name='delete' size={12} color='#333'/>
                <Text style={styles.itemText}>
                   {item.name}
-               </Text>
+                </Text>
            </View>
         </TouchableOpacity>
     )
@@ -26,3 +29,5 @@ const styles=StyleSheet.create({
         marginLeft:'left'
     }
 })
+
+

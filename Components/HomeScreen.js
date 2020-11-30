@@ -3,7 +3,7 @@ import { StyleSheet,Text, View,FlatList,Alert,TouchableWithoutFeedback,Keyboard 
 import Header from './Header';
 import TodoItem from './TodoItem';
 import AddTodos from './AddTodos';
-// import Sandbox from './Sandbox';
+
 
 export default function HomeScreen(){
   const [users,setUser]= useState([
@@ -28,7 +28,7 @@ export default function HomeScreen(){
        return delTodos.filter(data => data.id != id)
     })
    }
-   
+
   const submitHandler=(name)=>{
     if(name.length>3){
       setUser((todos)=>{
@@ -46,10 +46,10 @@ export default function HomeScreen(){
   }
   
  return(
-  //  <Sandbox/>
+ 
    <TouchableWithoutFeedback onPress={()=>{
      Keyboard.dismiss()
-    console.log('working')
+    console.log('Keyboard Dismiss')
    }}>
       <View style={styles.container}>
         <Header/>
@@ -61,8 +61,7 @@ export default function HomeScreen(){
              keyExtractor={(item)=>item.id.toString()}
               data={users}
                renderItem={({item})=>(
-              
-                //  <Text>{item.name}</Text>
+                // <Text>{item.name}</Text>
                <TodoItem item={item} pressHandler={pressHandler} />
               )}
             /> 
