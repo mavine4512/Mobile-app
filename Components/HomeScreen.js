@@ -25,7 +25,7 @@ export default function HomeScreen(){
 
   const pressHandler=(id)=>{
     setUser((delTodos)=>{
-       return delTodos.filter(data => data.id != id)
+       return delTodos.filter(todo => todo.id != id)
     })
    }
 
@@ -61,8 +61,8 @@ export default function HomeScreen(){
              keyExtractor={(item)=>item.id.toString()}
               data={users}
                renderItem={({item})=>(
-                // <Text>{item.name}</Text>
-               <TodoItem item={item} pressHandler={pressHandler} />
+                <Text>{item.name}</Text>
+              //  <TodoItem item={item} pressHandler={pressHandler} />
               )}
             /> 
          </View>
