@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import { View,Text,StyleSheet,TextInput,TouchableOpacity,StatusBar} from 'react-native';
 
+
 const userInfo={username:'admin',password:'pass123456'}
 
 export default class Login extends Component {
@@ -23,8 +24,9 @@ export default class Login extends Component {
              backgroundColor='#1e90ff'
              barStyle='light-content'
              />
+             
              <Text style={styles.welcome}>LogIn</Text>
-
+             <Text style={styles.credentials}>Username:admin,password:pass123456</Text>
              <TextInput style={styles.input} placeholder='Username' 
              onChangeText={(username)=>this.setState({username})}
              value={this.state.username}
@@ -33,7 +35,9 @@ export default class Login extends Component {
 
              <TextInput style={styles.input} placeholder='Password' secureTextEntry
               onChangeText={(password)=>this.setState({password})}
-              value={this.state.password}/>
+              value={this.state.password}
+              autoCapitalize='none'
+              />
 
                <View style={styles.btnContainer}>
                      <TouchableOpacity style={styles.userBtn}
@@ -74,6 +78,12 @@ const styles=StyleSheet.create({
         fontSize:30,
         color:'#fff',
         fontFamily:'DancingScrip-Bold'
+    },
+    credentials:{
+        margin: 10,
+        fontSize:15,
+        fontWeight:'bold',
+        color:'#c0c0c0',
     },
     input:{
         backgroundColor:'#fff',
