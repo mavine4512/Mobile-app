@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-
-import { View,Text,StyleSheet,TextInput,TouchableOpacity,StatusBar,AsyncStorage} from 'react-native';
+import React, { Component } from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
+import { View,Text,StyleSheet,TextInput,TouchableOpacity,StatusBar} from 'react-native';
 
 const userInfo={username:'admin',password:'pass123456'}
 
