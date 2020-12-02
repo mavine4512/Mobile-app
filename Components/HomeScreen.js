@@ -21,8 +21,7 @@ export default function HomeScreen(){
     {name:'Carrot',id:12},
     
   ]);
-  
-
+ 
   const pressHandler=(id)=>{
     setUser((delTodos)=>{
        return delTodos.filter(todo => todo.id != id)
@@ -44,6 +43,7 @@ export default function HomeScreen(){
     }
     
   }
+  
   
  return(
  

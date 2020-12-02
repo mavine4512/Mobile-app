@@ -5,7 +5,7 @@ import { View,Text,StyleSheet,TextInput,TouchableOpacity,StatusBar} from 'react-
 
 const userInfo={username:'admin',password:'pass123456'}
 
-export default class Login extends Component {
+export default class SignUp extends Component {
 
     static navigationOptions={
         header:'null'
@@ -14,6 +14,8 @@ export default class Login extends Component {
         super(props);
         this.state={
             username:'',
+            email:'',
+            setPassword:'',
             password:''
         }
     }
@@ -25,11 +27,21 @@ export default class Login extends Component {
              barStyle='light-content'
              />
              
-             <Text style={styles.welcome}>LogIn</Text>
-             <Text style={styles.credentials}>Username:admin,password:pass123456</Text>
+             <Text style={styles.welcome}>SignUp</Text>
+
              <TextInput style={styles.input} placeholder='Username' 
              onChangeText={(username)=>this.setState({username})}
              value={this.state.username}
+             autoCapitalize='none'
+             />
+              <TextInput style={styles.input} placeholder='email' 
+             onChangeText={(email)=>this.setState({email})}
+             value={this.state.email}
+             autoCapitalize='none'
+             />
+             <TextInput style={styles.input} placeholder='Password' 
+             onChangeText={(setPassword)=>this.setState({setPassword})}
+             value={this.state.setPassword}
              autoCapitalize='none'
              />
 
@@ -40,27 +52,12 @@ export default class Login extends Component {
               />
 
                <View style={styles.btnContainer}>
-                     <TouchableOpacity style={styles.userBtn}
-                     onPress={this._login}
-                    //  onPress={()=>this.props.navigation.navigate('HomeScreen')}
-                      >
-                         <Text style={styles.btnTxt}>Login</Text>
-                     </TouchableOpacity>
-                     <TouchableOpacity style={styles.userBtn} onPress={()=>this.props.navigation.navigate('SignUp')}>
+                     <TouchableOpacity style={styles.userBtn} onPress={()=>this.props.navigation.navigate('Login')}>
                          <Text style={styles.btnTxt}>Sign up</Text>
                      </TouchableOpacity>
                 </View>
             </View>
         )
-    }
-    _login= async()=>{
-        if(userInfo.username === this.state.username && userInfo.password === this.state.password){
-            // alert('Logged In');
-            await AsyncStorage.setItem('isLoggedIn','1');
-            this.props.navigation.navigate('HomeScreen');
-        }else{
-            alert('User Name or Password is incorrect.')
-        }
     }
    
 }

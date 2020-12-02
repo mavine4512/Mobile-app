@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Components/HomeScreen';
 import Login from './Components/Login';
+import SignUp from './Components/SignUp';
 import 'react-native-gesture-handler';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -35,6 +36,14 @@ export default function App() {
           title: 'Home page',
         }}
       /> 
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={{
+          title: 'SignUp page',
+        }}
+      /> 
+    
       </Stack.Navigator>
    </NavigationContainer>
     

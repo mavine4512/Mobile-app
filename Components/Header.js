@@ -4,8 +4,11 @@ import {Text,View,StyleSheet,TouchableOpacity} from 'react-native';
 export default function Header(){
     return(
         <View style={styles.header}>
+             <Text style={styles.text}>
+                Available Items
+            </Text> 
             <View style={styles.BtnContainer}>
-            
+            <Text style={styles.text}>
             <TouchableOpacity style={styles.userBtn}
                      onPress={()=>alert("Coming Soon")}
                       >
@@ -16,7 +19,7 @@ export default function Header(){
                       >
                      <Text style={styles.btnTxt}>About Us</Text>
                      </TouchableOpacity>
-                    
+                     </Text>  
             </View>
         </View>
     )
@@ -28,13 +31,13 @@ const styles = StyleSheet.create({
         paddingTop:10,
         backgroundColor:'coral'
     },
-    // text:{
-    //     textAlign:'center',
-    //     color:'#fff',
-    //     fontSize:25,
-    //     fontWeight:'bold',
+    text:{
+        textAlign:'center',
+        color:'#fff',
+        fontSize:25,
+        fontWeight:'bold',
       
-    // },
+    },
     BtnContainer:{
         flexDirection:'row',
         justifyContent:'space-between',
