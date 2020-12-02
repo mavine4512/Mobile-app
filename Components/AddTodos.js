@@ -30,7 +30,7 @@ export default function AddTodos({submitHandler}){
       input:{
           marginBottom:8,
           paddingHorizontal:8,
-          paddingVertical:6,
+          paddingVertical:1,
           borderBottomWidth:1,
           borderBottomColor:'#bbb'
 

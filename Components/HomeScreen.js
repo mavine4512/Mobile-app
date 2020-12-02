@@ -52,8 +52,11 @@ export default function HomeScreen(){
     console.log('Keyboard Dismiss')
    }}>
       <View style={styles.container}>
-        <Header/>
+        
+          <Header/>
+         
          <View style={styles.content}>
+           
           <AddTodos submitHandler={submitHandler}/>
           <View style={styles.list}>
           
@@ -61,8 +64,8 @@ export default function HomeScreen(){
              keyExtractor={(item)=>item.id.toString()}
               data={users}
                renderItem={({item})=>(
-                <Text>{item.name}</Text>
-              //  <TodoItem item={item} pressHandler={pressHandler} />
+                // <Text>{item.name}</Text>
+               <TodoItem item={item} pressHandler={pressHandler} />
               )}
             /> 
          </View>

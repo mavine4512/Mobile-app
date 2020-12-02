@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { View,Text,StyleSheet,TextInput,TouchableOpacity,StatusBar,AsyncStorage } from 'react-native';
+import { View,Text,StyleSheet,TextInput,TouchableOpacity,StatusBar,AsyncStorage} from 'react-native';
 
 const userInfo={username:'admin',password:'pass123456'}
 
@@ -38,7 +38,7 @@ export default class Login extends Component {
                <View style={styles.btnContainer}>
                      <TouchableOpacity style={styles.userBtn}
                      onPress={this._login}
-                    //   onPress={()=>this.pross.navigation.navigate('AddItem')}
+                    //  onPress={()=>this.props.navigation.navigate('HomeScreen')}
                       >
                          <Text style={styles.btnTxt}>Login</Text>
                      </TouchableOpacity>
@@ -53,7 +53,7 @@ export default class Login extends Component {
         if(userInfo.username === this.state.username && userInfo.password === this.state.password){
             // alert('Logged In');
             await AsyncStorage.setItem('isLoggedIn','1');
-            this.pross.navigation.navigate('HomeScreen');
+            this.props.navigation.navigate('HomeScreen');
         }else{
             alert('User Name or Password is incorrect.')
         }
@@ -70,7 +70,7 @@ const styles=StyleSheet.create({
     },
     welcome:{
         textAlign:'center',
-        margin: 10,
+        margin: 20,
         fontSize:30,
         color:'#fff',
         fontFamily:'DancingScrip-Bold'
@@ -78,6 +78,7 @@ const styles=StyleSheet.create({
     input:{
         backgroundColor:'#fff',
         padding:15,
+        borderRadius:30,
         marginBottom:10,
         width:'90%'
     },
@@ -88,7 +89,8 @@ const styles=StyleSheet.create({
     userBtn:{
         backgroundColor:'#FFD700', 
         margin:2,
-        padding:15, 
+        padding:15,
+        borderRadius:30, 
         width:'45%' 
 
     },
