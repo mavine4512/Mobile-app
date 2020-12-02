@@ -49,6 +49,7 @@ export default class Login extends Component {
                      <TouchableOpacity style={styles.userBtn} onPress={()=>this.props.navigation.navigate('SignUp')}>
                          <Text style={styles.btnTxt}>Sign up</Text>
                      </TouchableOpacity>
+                     
                 </View>
             </View>
         )
@@ -66,10 +67,10 @@ export default class Login extends Component {
 }
 const styles=StyleSheet.create({
     container:{
-      flex:1,
-      backgroundColor:'#1e90ff',
-      justifyContent:'center',
-      alignItems:'center'
+        flex:1,
+        backgroundColor:'#1e90ff',
+        justifyContent:'center',
+        alignItems:'center'
       
     },
     welcome:{
@@ -105,7 +106,7 @@ const styles=StyleSheet.create({
 
     },
     btnTxt:{
-    fontSize:18,
-    textAlign:"center"
+       fontSize:18,
+       textAlign:"center"
     }
   });
